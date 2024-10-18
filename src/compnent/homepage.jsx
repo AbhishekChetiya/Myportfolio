@@ -1,8 +1,7 @@
 import React from 'react';
-import ChatBubble from './Chatbubble';
 import Resume from '/Resume.pdf'
 import photo1 from '/Photo1.png'
-import TypingEffect from './Typingeffect';
+import TypingEffect from './Typingeffect.jsx';
 const HomeSection = () => {
 
     return (
@@ -30,7 +29,6 @@ const HomeSection = () => {
                     </div>
                 </div>
             </div>
-            <ChatBubble />
         </section>
     );
 };

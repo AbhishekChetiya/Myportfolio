@@ -1,12 +1,12 @@
-import AboutSection from "./compnent/About";
-import ChatBubble from "./compnent/Chatbubble";
-import Competitive from "./compnent/Competitive";
-import ContactSection from "./compnent/Contact";
-import Footer from "./compnent/Footer";
-import HomeSection from "./compnent/homepage";
-import Navbar from "./compnent/Navbar";
-import ProjectsSection from "./compnent/Project";
-import Skill from "./compnent/Skill";
+import AboutSection from "./compnent/About.jsx";
+import ChatBubble from "./compnent/Chatbubble.jsx";
+import Competitive from "./compnent/Competitive.jsx";
+import ContactSection from "./compnent/Contact.jsx";
+import Footer from "./compnent/Footer.jsx";
+import HomeSection from "./compnent/homepage.jsx";
+import Navbar from "./compnent/Navbar.jsx";
+import ProjectsSection from "./compnent/Project.jsx";
+import Skill from "./compnent/Skill.jsx";
 
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
       <Competitive/>
       <Skill/>
       <ContactSection/>
+      <ChatBubble/>
       <Footer/>
     </div>
   );

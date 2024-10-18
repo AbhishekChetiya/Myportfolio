@@ -1,4 +1,3 @@
-import ChatBubble from "./Chatbubble";
 import photo1 from '/Photo3.png'
 const AboutSection = () => {
   return (
@@ -57,7 +56,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-      <ChatBubble />
     </section>
   );
 };
