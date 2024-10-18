@@ -1,5 +1,5 @@
 import AboutSection from "./compnent/About.jsx";
-import ChatBubble from "./compnent/Chatbubble.jsx";
+import ChatBubble from "./compnent/Chat.jsx";
 import Competitive from "./compnent/Competitive.jsx";
 import ContactSection from "./compnent/Contact.jsx";
 import Footer from "./compnent/Footer.jsx";
