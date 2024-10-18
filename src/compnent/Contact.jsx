@@ -1,3 +1,4 @@
+import { Tilt } from "react-tilt";
 import Resume from "/Resume.pdf";
 const ContactSection = () => {
     return (
@@ -26,8 +27,12 @@ const ContactSection = () => {
             <a href="https://forms.gle/xYthhy3j8NdQ9EWc8" target = "_blank" className= "btn-primary">Have a Question?</a>
           </div>
           <div className="flex justify-center space-x-4 mt-10">
+           <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
           <a href="https://www.linkedin.com/in/abhishek-pandey-0b41a9229/" target="_blank" className="btn-primary bg-red-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-600 transition duration-300 ease-in-out">Linkedin</a>
+          </Tilt>
+          <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
           <a href="https://www.instagram.com/aabbhishek_pandey/" target="_blank" className="btn-primary bg-red-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-600 transition duration-300 ease-in-out">Instagram</a>
+          </Tilt>
             </div>
         </div>
       </section>

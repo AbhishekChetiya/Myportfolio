@@ -6,6 +6,7 @@ import Develop from '/Development.png'
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 let Card, CardContent, CardHeader, CardTitle, Button;
+import {Tilt} from 'react-tilt';
 try {
   ({ Card, CardContent, CardHeader, CardTitle } = require('../components/ui/card'));
   ({ Button } = require('../components/ui/button'));
@@ -89,18 +90,23 @@ const Skills = () => {
   }, []);
 
   const ProfileCard = ({ profile, isActive }) => (
-    <Card 
-      className={`w-full ${isActive ? 'block' : 'hidden lg:block'} mb-4 lg:mb-0 transition-all duration-300 ease-in-out`}
-    >
-      <CardHeader>
-        <CardTitle>{profile.title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-         <img src={profile.image} alt={profile.title} className="w-full h-70 object-cover" />
-      </CardContent>
-    </Card>
+    <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
+      <Card 
+        className={`w-full ${isActive ? 'block' : 'hidden lg:block'} mb-4 lg:mb-0 transition-all duration-300 ease-in-out overflow-hidden rounded-lg`}
+      >
+        <div className="relative">
+          <img 
+            src={profile.image} 
+            alt={profile.title} 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <CardContent>
+          <CardTitle className="mb-2">{profile.title}</CardTitle>
+        </CardContent>
+      </Card>
+    </Tilt>
   );
-
   return (
     <section id="Skills-section" className="py-20 bg-gray-300">
       <div className="container mx-auto px-4">

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Codechef from '/codechef.png'
 import codeforces from '/codeforces.png'
-import leetcode from '/leetcode.png'
+import leetcode from '/leetcode.jpg'
 import gfg from '/gfg.png'
-import github from '/github.png'
+import github from '/github.jpg'
+import {Tilt} from 'react-tilt';
 
 let Card, CardContent, CardHeader, CardTitle, Button;
 try {
@@ -102,22 +103,31 @@ const CodingProfilesSection = () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
-
-  const ProfileCard = ({ profile, isActive }) => (
-    <Card 
-      className={`w-full ${isActive ? 'block' : 'hidden lg:block'} mb-4 lg:mb-0 transition-all duration-300 ease-in-out`}
-    >
-      <CardHeader>
-        <CardTitle>{profile.title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <img src={profile.image} alt={profile.title} className="w-full h-48 object-contain mb-4 rounded-md" />
-        <p className="mb-4 text-center">{profile.description}</p>
-        <a href={profile.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 block text-center">View Profile</a>
-      </CardContent>
-    </Card>
+   
+const ProfileCard = ({ profile, isActive }) => (
+    <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
+      <Card 
+        className={`w-full ${isActive ? 'block' : 'hidden lg:block'} mb-4 lg:mb-0 transition-all duration-300 ease-in-out overflow-hidden rounded-lg`}
+      >
+        <div className="relative h-64">
+          <img 
+            src={profile.image} 
+            alt={profile.title} 
+            className="w-full h-full object-cover rounded-t-lg"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
+            <CardTitle className="text-white mb-2">{profile.title}</CardTitle>
+            <p className="text-white text-sm mb-2 line-clamp-2">{profile.description}</p>
+            <div className="flex justify-start gap-4">
+              <a href={profile.link} target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-100 text-sm">
+                View Profile
+              </a>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </Tilt>
   );
-
   return (
     <section id="Profile-section" className="py-20 bg-gray-300">
       <div className="container mx-auto px-4">

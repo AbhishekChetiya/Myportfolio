@@ -6,6 +6,7 @@ import socail from '/Social.png'
 import casino from '/casino.png'
 import calculator from '/calculator.png'
 import sudoko from '/sudoko.png'
+import {Tilt} from 'react-tilt';
 
 let Card, CardContent, CardHeader, CardTitle, Button;
 try {
@@ -111,34 +112,35 @@ const ProjectSection = () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
-
   const ProfileCard = ({ profile, isActive }) => (
-    <Card 
-      className={`w-full ${isActive ? 'block' : 'hidden lg:block'} mb-4 lg:mb-0 transition-all duration-300 ease-in-out`}
-    >
-      <CardHeader>
-        <CardTitle>{profile.title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <img src={profile.image} alt={profile.title} className="w-full h-48 object-contain mb-4 rounded-md" />
-        <p className="mb-4 text-center">{profile.description}</p>
-        
-        <div className="flex justify-center gap-4">
-          <a href={profile.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 block text-center">
-            View Github
-          </a>
-          {profile.secondLink && (
-            <a href={profile.secondLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 block text-center">
-              View Website
-            </a>
-          )}
+    <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
+      <Card 
+        className={`w-full ${isActive ? 'block' : 'hidden lg:block'} mb-4 lg:mb-0 transition-all duration-300 ease-in-out overflow-hidden rounded-lg flex flex-col h-[450px]`}
+      >
+        <div className="relative h-48 flex-shrink-0">
+          <img 
+            src={profile.image} 
+            alt={profile.title} 
+            className="w-full h-full object-cover"
+          />
         </div>
-        
-      </CardContent>
-    </Card>
+        <CardContent className="flex flex-col flex-grow">
+          <CardTitle className="mb-2">{profile.title}</CardTitle>
+          <p className="text-sm mb-4 overflow-y-auto flex-grow">{profile.description}</p>
+          <div className="flex justify-start gap-4 mt-auto">
+            <a href={profile.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 text-sm">
+              View Github
+            </a>
+            {profile.secondLink && (
+              <a href={profile.secondLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 text-sm">
+                View Website
+              </a>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    </Tilt>
   );
-  
-
   return (
     <section id="project-section" className="py-20 bg-gray-300">
       <div className="container mx-auto px-4">

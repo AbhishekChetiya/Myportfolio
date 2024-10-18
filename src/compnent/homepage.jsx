@@ -2,6 +2,7 @@ import React from 'react';
 import Resume from '/Resume.pdf'
 import photo1 from '/Photo1.png'
 import TypingEffect from './Typingeffect.jsx';
+import { Tilt } from 'react-tilt';
 const HomeSection = () => {
 
     return (
@@ -15,17 +16,21 @@ const HomeSection = () => {
                             Primarily interested in Web Development, Competitive Programming and Software Development.
                             I enjoy learning new skills and implementing them in real life!</h2>
                         <div className="flex space-x-4">
+                         <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
                             <a href="https://www.linkedin.com/in/abhishek-pandey-0b41a9229/" target="_blank" className="btn-primary bg-red-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-red-600 transition duration-300 ease-in-out">
                                 Linkedin
                             </a>
+                            </Tilt>
+                            <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
                             <a href={Resume} download className="btn-secondary bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out">
                                 Download CV
                             </a>
+                            </Tilt>
                         </div>
 
                     </div>
                     <div className="md:w-1/2">
-                        <img src={photo1} alt="Abhishek Pandey" className="rounded-full w-64 h-64 object-cover mx-auto" />
+                        <img src={photo1} alt="Abhishek Pandey" className="rounded-full w-80 h-80 object-cover mx-auto" />
                     </div>
                 </div>
             </div>
