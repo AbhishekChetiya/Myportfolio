@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaComments, FaPaperPlane, FaTimes } from 'react-icons/fa';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import envfile from '../envimport';
+import envfile from '../envimport.js';
 const apiKey = envfile.apiKey
 const genAI = new GoogleGenerativeAI(apiKey);
 const generationConfig = {
