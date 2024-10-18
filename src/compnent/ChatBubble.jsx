@@ -6,7 +6,7 @@ const apiKey = envfile.apiKey
 const genAI = new GoogleGenerativeAI(apiKey);
 const generationConfig = {
   temperature: 0.4,
-  topP: 0.95,
+  topP: 0.4,
   topK: 64,
   maxOutputTokens: 8192,
   responseMimeType: 'text/plain',
