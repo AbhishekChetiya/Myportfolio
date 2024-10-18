@@ -34,7 +34,7 @@ const ProjectSection = () => {
       title: "Social-Media-Website",
       description: `This project is an Instagram clone built with the MERN stack, featuring a React front-end and Node/Express back-end with MongoDB. It enables real-time chat via Socket.io and allows users to post images, videos, comment, and like content. Secure authentication is managed with JWT and Bcrypt, while Cloudinary handles image storage and Postman is used for API testing`,
       image: socail,
-      secondLink : `https://clone-like-instagram-frontend.onrender.com/`,
+      secondLink : `https://social-media-website-rust.vercel.app/`,
       link: "https://github.com/AbhishekChetiya/Social-Media-Website"
     },
     {
