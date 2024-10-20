@@ -18,35 +18,47 @@ const AboutSection = () => {
   const projects = [
     {
       title: "Social-Media-Website",
-      description: "Instagram clone with MERN stack, real-time chat, and secure authentication.",
-      link: "https://github.com/AbhishekChetiya/Social-Media-Website",
-      demo: "https://social-media-website-rust.vercel.app/"
+      description: `This project is an Instagram clone built with the MERN stack, featuring a React front-end and Node/Express back-end with MongoDB. It enables real-time chat via Socket.io and allows users to post images, videos, comment, and like content. Secure authentication is managed with JWT and Bcrypt, while Cloudinary handles image storage and Postman is used for API testing`,
+      image: socail,
+      secondLink : `https://social-media-website-rust.vercel.app/`,
+      link: "https://github.com/AbhishekChetiya/Social-Media-Website"
     },
     {
-      title: "Full-stack To-Do List",
-      description: "MERN stack application for task management with user registration.",
+      title: "full-stack To-Do List application",
+      description: `This project enables users to register, manage, and delete tasks through an intuitive interface. Built with the MERN stack, it features robust backend APIs using Express.js and efficient database management with MongoDB, enhancing my Node.js skills and simplifying task management.`,
+      image: todo,
+      secondLink : "https://to-do-list-full-stack-nu.vercel.app/",
       link: "https://github.com/AbhishekChetiya/To-Do-List-Full-Stack"
     },
     {
       title: "Calculator",
-      description: "Responsive calculator with HTML, CSS, and JavaScript for basic operations.",
+      description: `Developed a user-friendly calculator using HTML, CSS, and JavaScript to perform basic mathematical operations. The application features a responsive design with a visually appealing interface, allowing users to easily input values and view results in real time. This project showcases my skills in front-end development and dynamic functionality.`,
+      secondLink : "https://calculator-lovat-alpha.vercel.app/",
+      image: calculator,
       link: "https://github.com/AbhishekChetiya/Calculator"
     },
     {
-      title: "Sudoku Solver",
-      description: "Efficient Sudoku solver using recursion and backtracking techniques.",
-      link: "https://github.com/AbhishekChetiya/Sudoko"
+      title: "Sudoko",
+      description: `Developed a Sudoku solver that efficiently solves puzzles using recursion and backtracking techniques. The application validates input data to ensure solvability, providing accurate solutions when valid puzzles are entered. Built with HTML, CSS, and JavaScript for a user-friendly interface and seamless interaction.`,
+      image: sudoko,
+      secondLink : "https://sudoku-solver-murex.vercel.app/",
+      link: "https://github.com/AbhishekChetiya/SudokuSolver"
     },
     {
-      title: "Casino Game",
-      description: "Card game aiming for 21, with sound effects for an enhanced experience.",
+      title: "Casino",
+      description: `A card game where players draw from a deck of thirteen cards to reach a winning value of 21. Players can continue drawing cards until their total exceeds 21, resulting in a loss. Each loss deducts money, and sound effects enhance the gaming experience, signaling wins and losses.`,
+      image: casino,
+      secondLink :"https://casino-dusky-eta.vercel.app/",
       link: "https://github.com/AbhishekChetiya/CASINO"
     },
     {
       title: "Telegram Bot",
-      description: "Personalized bot with Gemini AI, showcasing skills and achievements.",
+      description: `This personalized Telegram bot, built with Gemini AI, introduces my skills, interests, and achievements. It answers user questions and provides tailored insights about my software development background, competitive programming, and ongoing projects, enhancing user interaction in a friendly manner.`,
+      image: tele,
+      secondLink: "https://github.com/AbhishekChetiya/MyTeleChat_bot",
       link: "https://github.com/AbhishekChetiya/MyTeleChat_bot"
-    }
+    },
+    // Add more projects as needed
   ];
 
   const achievements = [
@@ -93,8 +105,8 @@ const AboutSection = () => {
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">
                       GitHub
                     </a>
-                    {project.demo && (
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline text-sm">
+                    {project.secondLink && (
+                      <a href={project.secondLink} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline text-sm">
                         Demo
                       </a>
                     )}

@@ -22,8 +22,8 @@ const HomeSection = () => {
                             </a>
                             </Tilt>
                             <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
-                            <a href={Resume} download className="btn-secondary bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out">
-                                Download CV
+                            <a href="https://drive.google.com/file/d/1-M6e8DlivAUqA0jhCIPxDXijTgMWTtqL/view?usp=sharing" className="btn-secondary bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out">
+                                Resume
                             </a>
                             </Tilt>
                         </div>

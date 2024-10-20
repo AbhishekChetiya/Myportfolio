@@ -42,11 +42,13 @@ const ProjectSection = () => {
       title: "full-stack To-Do List application",
       description: `This project enables users to register, manage, and delete tasks through an intuitive interface. Built with the MERN stack, it features robust backend APIs using Express.js and efficient database management with MongoDB, enhancing my Node.js skills and simplifying task management.`,
       image: todo,
+      secondLink : "https://to-do-list-full-stack-nu.vercel.app/",
       link: "https://github.com/AbhishekChetiya/To-Do-List-Full-Stack"
     },
     {
       title: "Calculator",
       description: `Developed a user-friendly calculator using HTML, CSS, and JavaScript to perform basic mathematical operations. The application features a responsive design with a visually appealing interface, allowing users to easily input values and view results in real time. This project showcases my skills in front-end development and dynamic functionality.`,
+      secondLink : "https://calculator-lovat-alpha.vercel.app/",
       image: calculator,
       link: "https://github.com/AbhishekChetiya/Calculator"
     },
@@ -54,18 +56,21 @@ const ProjectSection = () => {
       title: "Sudoko",
       description: `Developed a Sudoku solver that efficiently solves puzzles using recursion and backtracking techniques. The application validates input data to ensure solvability, providing accurate solutions when valid puzzles are entered. Built with HTML, CSS, and JavaScript for a user-friendly interface and seamless interaction.`,
       image: sudoko,
-      link: "https://github.com/AbhishekChetiya/Sudoko"
+      secondLink : "https://sudoku-solver-murex.vercel.app/",
+      link: "https://github.com/AbhishekChetiya/SudokuSolver"
     },
     {
       title: "Casino",
       description: `A card game where players draw from a deck of thirteen cards to reach a winning value of 21. Players can continue drawing cards until their total exceeds 21, resulting in a loss. Each loss deducts money, and sound effects enhance the gaming experience, signaling wins and losses.`,
       image: casino,
+      secondLink :"https://casino-dusky-eta.vercel.app/",
       link: "https://github.com/AbhishekChetiya/CASINO"
     },
     {
       title: "Telegram Bot",
       description: `This personalized Telegram bot, built with Gemini AI, introduces my skills, interests, and achievements. It answers user questions and provides tailored insights about my software development background, competitive programming, and ongoing projects, enhancing user interaction in a friendly manner.`,
       image: tele,
+      secondLink: "https://github.com/AbhishekChetiya/MyTeleChat_bot",
       link: "https://github.com/AbhishekChetiya/MyTeleChat_bot"
     },
     // Add more projects as needed
@@ -133,7 +138,7 @@ const ProjectSection = () => {
             </a>
             {profile.secondLink && (
               <a href={profile.secondLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 text-sm">
-                View Website
+                Demo
               </a>
             )}
           </div>
