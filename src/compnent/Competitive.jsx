@@ -5,6 +5,7 @@ import codeforces from '/codeforces.png'
 import leetcode from '/leetcode.jpg'
 import gfg from '/gfg.png'
 import github from '/github.jpg'
+import link from '/link.jpg'
 import {Tilt} from 'react-tilt';
 
 let Card, CardContent, CardHeader, CardTitle, Button;
@@ -59,6 +60,12 @@ const CodingProfilesSection = () => {
       description: "Visit To See My Projects",
       image: github,
       link: "https://github.com/AbhishekChetiya"
+    },{
+      
+        title: "Linkedin",
+        description: "",
+        image: link,
+        link: "https://www.linkedin.com/in/abhishek-pandey-0b41a9229/"
     }
   ];
 

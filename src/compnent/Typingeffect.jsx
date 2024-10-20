@@ -4,7 +4,7 @@ const TypingEffect = () => {
   const [typingText, setTypingText] = useState('');
 
   useEffect(() => {
-    const typingTexts = [' MERN Stack Developer', ' Competitive Programmer', ' Aspiring Student'];
+    const typingTexts = ['  MERN Stack Developer', ' Competitive Programmer', ' Aspiring Student'];
     let currentTextIndex = 0;
     let currentCharIndex = 0;
     let typingTimeout; 

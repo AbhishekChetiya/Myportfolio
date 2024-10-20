@@ -1,5 +1,5 @@
 import { Tilt } from "react-tilt";
-import Resume from "/Resume.pdf";
+
 const ContactSection = () => {
     return (
       <section id="contact-section" className="py-20 bg-gray-300">
@@ -19,8 +19,8 @@ const ContactSection = () => {
               <p>a1.bhishek.p1.andey@gmail.com</p>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">Resume</h3>
-              <a href="https://drive.google.com/file/d/1-M6e8DlivAUqA0jhCIPxDXijTgMWTtqL/view?usp=sharing" className="text-blue-500 hover:text-blue-600">resumelink</a>
+              <h3 className="text-xl font-semibold mb-2" >Resume</h3>
+              <a href="https://drive.google.com/file/d/1-M6e8DlivAUqA0jhCIPxDXijTgMWTtqL/view?usp=sharing"  target = "_blank" className="text-blue-500 hover:text-blue-600">resumelink</a>
             </div>
           </div>
           <div className="text-center mt-10">

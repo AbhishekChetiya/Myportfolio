@@ -14,52 +14,46 @@ const AboutSection = () => {
     'C++', 'JavaScript', 'SQL', 'HTML', 'React', 'Node.js', 'MongoDB', 'Python', 'CSS', 'MERN stack',
     
   ];
-
   const projects = [
     {
       title: "Social-Media-Website",
-      description: `This project is an Instagram clone built with the MERN stack, featuring a React front-end and Node/Express back-end with MongoDB. It enables real-time chat via Socket.io and allows users to post images, videos, comment, and like content. Secure authentication is managed with JWT and Bcrypt, while Cloudinary handles image storage and Postman is used for API testing`,
-      image: socail,
-      secondLink : `https://social-media-website-rust.vercel.app/`,
+      description: `Social Media built with MERN stack, featuring real-time chat and Post like and comments Features.`,
+      secondLink: `https://social-media-website-rust.vercel.app/`,
       link: "https://github.com/AbhishekChetiya/Social-Media-Website"
     },
     {
       title: "full-stack To-Do List application",
-      description: `This project enables users to register, manage, and delete tasks through an intuitive interface. Built with the MERN stack, it features robust backend APIs using Express.js and efficient database management with MongoDB, enhancing my Node.js skills and simplifying task management.`,
-      image: todo,
-      secondLink : "https://to-do-list-full-stack-nu.vercel.app/",
+      description: `MERN-based To-Do app allowing task management with robust Express.js backend APIs.`,
+      secondLink: "https://to-do-list-full-stack-nu.vercel.app/",
       link: "https://github.com/AbhishekChetiya/To-Do-List-Full-Stack"
     },
     {
       title: "Calculator",
-      description: `Developed a user-friendly calculator using HTML, CSS, and JavaScript to perform basic mathematical operations. The application features a responsive design with a visually appealing interface, allowing users to easily input values and view results in real time. This project showcases my skills in front-end development and dynamic functionality.`,
-      secondLink : "https://calculator-lovat-alpha.vercel.app/",
-      image: calculator,
+      description: `Simple calculator using HTML, CSS, JavaScript for basic operations and responsive design.`,
+      secondLink: "https://calculator-lovat-alpha.vercel.app/",
       link: "https://github.com/AbhishekChetiya/Calculator"
     },
     {
-      title: "Sudoko",
-      description: `Developed a Sudoku solver that efficiently solves puzzles using recursion and backtracking techniques. The application validates input data to ensure solvability, providing accurate solutions when valid puzzles are entered. Built with HTML, CSS, and JavaScript for a user-friendly interface and seamless interaction.`,
-      image: sudoko,
-      secondLink : "https://sudoku-solver-murex.vercel.app/",
+      title: "Sudoku",
+      description: `A Sudoku solver using recursion and backtracking, with real-time validation.`,
+      secondLink: "https://sudoku-solver-murex.vercel.app/",
       link: "https://github.com/AbhishekChetiya/SudokuSolver"
     },
     {
       title: "Casino",
-      description: `A card game where players draw from a deck of thirteen cards to reach a winning value of 21. Players can continue drawing cards until their total exceeds 21, resulting in a loss. Each loss deducts money, and sound effects enhance the gaming experience, signaling wins and losses.`,
-      image: casino,
-      secondLink :"https://casino-dusky-eta.vercel.app/",
+      description: `Card game where players try to reach 21, featuring sound effects and penalties.`,
+      secondLink: "https://casino-dusky-eta.vercel.app/",
       link: "https://github.com/AbhishekChetiya/CASINO"
     },
     {
       title: "Telegram Bot",
-      description: `This personalized Telegram bot, built with Gemini AI, introduces my skills, interests, and achievements. It answers user questions and provides tailored insights about my software development background, competitive programming, and ongoing projects, enhancing user interaction in a friendly manner.`,
-      image: tele,
+      description: `Personalized Telegram bot showcasing my skills and achievements with Gemini AI integration.`,
       secondLink: "https://github.com/AbhishekChetiya/MyTeleChat_bot",
       link: "https://github.com/AbhishekChetiya/MyTeleChat_bot"
-    },
+    }
     // Add more projects as needed
   ];
+  
 
   const achievements = [
     { platform: 'Codeforces', status: 'Expert', rating: 1633 },
