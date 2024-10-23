@@ -8,29 +8,7 @@ import github from '/github.jpg'
 import link from '/link.jpg'
 import {Tilt} from 'react-tilt';
 
-let Card, CardContent, CardHeader, CardTitle, Button;
-try {
-  ({ Card, CardContent, CardHeader, CardTitle } = require('../components/ui/card'));
-  ({ Button } = require('../components/ui/button'));
-} catch (error) {
-  // Fallback components if imports fail
-  Card = ({ children, className }) => <div className={`border rounded-lg ${className}`}>{children}</div>;
-  CardHeader = ({ children }) => <div className="p-4 border-b">{children}</div>;
-  CardTitle = ({ children }) => <h3 className="text-lg font-semibold">{children}</h3>;
-  CardContent = ({ children }) => <div className="p-4">{children}</div>;
-  Button = ({ children, onClick, className }) => (
-    <button onClick={onClick} className={`px-4 py-2 bg-blue-500 text-white rounded ${className}`}>
-      {children}
-    </button>
-  );
-}
-
-const CodingProfilesSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  const profiles = [
+const cards = [
     {
       title: "CodeForces",
       description: "Expert Highest Rating - 1633",
@@ -69,117 +47,100 @@ const CodingProfilesSection = () => {
     }
   ];
 
-  const nextProfile = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % profiles.length);
-  };
-
-  const prevProfile = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + profiles.length) % profiles.length);
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 75) {
-      nextProfile();
+const CodingProfilesSection = () => {
+    const [currentIndex, setCurrentIndex] = useState(0)
+  
+    const nextSlide = () => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length)
     }
-
-    if (touchStart - touchEnd < -75) {
-      prevProfile();
+  
+    const prevSlide = () => {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length)
     }
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'ArrowLeft') {
-        prevProfile();
-      } else if (event.key === 'ArrowRight') {
-        nextProfile();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-   
-const ProfileCard = ({ profile, isActive }) => (
-    <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
-      <Card 
-        className={`w-full ${isActive ? 'block' : 'hidden lg:block'} mb-4 lg:mb-0 transition-all duration-300 ease-in-out overflow-hidden rounded-lg`}
-      >
-        <div className="relative h-64">
-          <img 
-            src={profile.image} 
-            alt={profile.title} 
-            className="w-full h-full object-cover rounded-t-lg"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-4">
-            <CardTitle className="text-white mb-2">{profile.title}</CardTitle>
-            <p className="text-white text-sm mb-2 line-clamp-2">{profile.description}</p>
-            <div className="flex justify-start gap-4">
-              <a href={profile.link} target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-100 text-sm">
-                View Profile
-              </a>
-            </div>
-          </div>
-        </div>
-      </Card>
-    </Tilt>
-  );
-  return (
-    <section id="Profile-section" className="py-20 bg-gray-300">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-10 text-center">Profiles</h2>
-        <div 
-          className="relative"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {profiles.map((profile, index) => (
-              <ProfileCard
-                key={index}
-                profile={profile}
-                isActive={index === currentIndex}
-              />
-            ))}
-          </div>
-          <Button
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 lg:hidden"
-            onClick={prevProfile}
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 lg:hidden"
-            onClick={nextProfile}
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-        <div className="flex justify-center mt-4 lg:hidden">
-          {profiles.map((_, index) => (
-            <div
-              key={index}
-              className={`h-2 w-2 mx-1 rounded-full ${
-                index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'
-              }`}
-            />
+  
+    return (
+      <section id="project-section" className="py-20 bg-gray-300">
+      <h2 className="text-4xl font-bold text-center mb-8 text-blue-500">Profiles</h2>
+      <div className="container mx-auto px-4 py-8">
+        {/* Large screens: Three cards in a row */}
+        <div className="hidden lg:grid lg:grid-cols-3 lg:gap-4">
+          {cards.map((card, index) => (
+            <Card key={index} {...card} />
           ))}
         </div>
+  
+        {/* Medium screens: Two cards in a row */}
+        <div className="hidden md:grid md:grid-cols-2 md:gap-4 lg:hidden">
+          {cards.map((card, index) => (
+            <Card key={index} {...card} />
+          ))}
+        </div>
+  
+        {/* Small screens: Slideable single card */}
+        <div className="md:hidden relative">
+          <Card {...cards[currentIndex]} />
+          <div className="absolute inset-y-0 left-0 flex items-center">
+            <button
+              onClick={prevSlide}
+              className="bg-white/30 hover:bg-white/50 rounded-full p-2  transition"
+              aria-label="Previous card"
+            >
+              <ChevronLeft className="h-6 w-6 text-black" />
+            </button>
+          </div>
+          <div className="absolute inset-y-0 right-0 flex items-center">
+            <button
+              onClick={nextSlide}
+              className="bg-white/30 hover:bg-white/50 rounded-full p-2 transition"
+              aria-label="Next card"
+            >
+              <ChevronRight className="h-6 w-6 text-black" />
+            </button>
+          </div>
+        </div>
       </div>
-    </section>
-  );
-};
+      </section>
+    )
+  }
+  
+  
+  function Card({ title, description, image, link, secondLink }) {
+    return (
+      <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
+      <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4">
+          <h1 className="text-xl font-bold text-white">{title}</h1>
+        </div>
+        <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <div className="p-4 flex flex-col flex-grow">
+          <p className="text-gray-600 mb-4 flex-grow">{description}</p>
+          <div className="flex space-x-4 mt-auto">
+            {link && (
+              <a
+                href={link}
+                className="text-blue-500 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+               View
+              </a>
+            )}
+            {secondLink && (
+              <a
+                href={secondLink}
+                className="text-purple-500 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn More
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+      </Tilt>
+    )
+  }
+  
 
 export default CodingProfilesSection;

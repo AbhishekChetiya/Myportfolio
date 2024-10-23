@@ -1,79 +1,73 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FaComments, FaPaperPlane, FaTimes } from 'react-icons/fa';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import envfile from '../envimport.js';
-const apiKey = envfile.apiKey
-const genAI = new GoogleGenerativeAI(apiKey);
-const generationConfig = {
-  temperature: 0.4,
-  topP: 0.4,
-  topK: 64,
-  maxOutputTokens: 8192,
-  responseMimeType: 'text/plain',
-};
-
-const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash",
-});
-async function run(user_input) {
-  const chatSession = model.startChat({
-    generationConfig,
-    history: [
-      {
-        role: "user",
-        parts: [
-          { text: envfile.data },
-        ],
-      },
-    ],
-  });
-  const result = await chatSession.sendMessage(user_input);
-  return result.response.text();
-}
-
+import { MessageCircle, Send, X } from 'lucide-react';
+import run  from './Chat.js';
+import StartChat  from './Chat.js';
 const ChatBubble = () => {
+  const initialMessage = {
+    text: "👋 Hi! I'm your chat assistant. How can I help you today?",
+    isBot: true
+  };
+
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-
-  ]);
+  const [messages, setMessages] = useState([initialMessage]);
   const [inputMessage, setInputMessage] = useState("");
-  const messagesEndRef = useRef(null); // Updated to plain JavaScript
+  const messagesEndRef = useRef(null);
+  const chatContainerRef = useRef(null);
 
+  // Enhanced scroll to bottom function
   const scrollToBottom = () => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(scrollToBottom, [messages]);
+  // Scroll when messages change or chat opens
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isOpen]);
 
   const handleSendMessage = (e) => {
     e.preventDefault();
     if (inputMessage.trim() === "") return;
-
+    
     setMessages((prevMessages) => [
       ...prevMessages,
       { text: inputMessage, isBot: false },
     ]);
-    async function get() {
-      const randomResponse = await run(inputMessage);
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: randomResponse, isBot: true },
-      ]);
-    }
-    get();
-    // Clear the input message after sending
-    setInputMessage("");
 
+    async function get() {
+      try {
+        const randomResponse = await run(inputMessage);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: randomResponse, isBot: true },
+        ]);
+      } catch (error) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { 
+            text: "I apologize, but I encountered an error. Please try again.", 
+            isBot: true 
+          },
+        ]);
+      }
+    }
+
+    get();
+    setInputMessage("");
   };
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8">
       {!isOpen && (
-       <button
-       onClick={() => setIsOpen(true)}
-       className="rounded-full w-16 h-16 bg-blue-500 text-white shadow-lg flex items-center justify-center"
-     >
-       <FaComments className="h-6 w-6" />
+        <button
+          onClick={() => setIsOpen(true) && StartChat}
+          className="group rounded-full w-16 h-16 bg-blue-500 text-white shadow-lg flex items-center justify-center hover:bg-blue-600 transition-all duration-300 animate-bounce"
+        >
+          <MessageCircle className="h-6 w-6 animate-pulse" />
+          <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-500 rounded-full animate-ping" />
+          <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-500 rounded-full" />
           <span className="sr-only">Open chat</span>
         </button>
       )}
@@ -81,16 +75,22 @@ const ChatBubble = () => {
       {isOpen && (
         <div className="fixed bottom-0 right-0 h-full w-full sm:h-[80vh] sm:w-[40vw] md:w-[40vw] bg-white shadow-xl flex flex-col rounded-t-lg">
           <div className="border-b flex flex-row items-center justify-between p-4">
-            <h2 className="text-lg font-bold">Chat Assistant</h2>
+            <div className="flex flex-col">
+              <h2 className="text-lg font-bold">Chat Assistant</h2>
+              <p className="text-sm text-green-500">online</p>
+            </div>
             <button
               onClick={() => setIsOpen(false)}
               className="rounded-full p-2 hover:bg-gray-200"
             >
-              <FaTimes className="h-4 w-4" />
+              <X className="h-4 w-4" />
               <span className="sr-only">Close chat</span>
             </button>
           </div>
-          <div className="flex-grow overflow-y-auto p-4 space-y-4">
+          <div 
+            ref={chatContainerRef}
+            className="flex-grow overflow-y-auto p-4 space-y-4 scroll-smooth"
+          >
             {messages.map((message, index) => (
               <div
                 key={index}
@@ -102,14 +102,13 @@ const ChatBubble = () => {
                   </div>
                 )}
                 <div
-                  className={`rounded-lg p-3 max-w-[70%] ${message.isBot ? "bg-gray-200 text-gray-800" : "bg-blue-500 text-white"
-                    }`}
+                  className={`rounded-lg p-3 max-w-[70%] ${message.isBot ? "bg-gray-200 text-gray-800" : "bg-blue-500 text-white"}`}
                 >
                   {message.text}
                 </div>
               </div>
             ))}
-            <div ref={messagesEndRef} />
+            <div ref={messagesEndRef} className="h-1" />
           </div>
           <div className="border-t p-4">
             <form onSubmit={handleSendMessage} className="flex w-full space-x-2">
@@ -122,9 +121,9 @@ const ChatBubble = () => {
               />
               <button
                 type="submit"
-                className="rounded-full bg-blue-500 text-white p-2"
+                className="rounded-full bg-blue-500 text-white p-2 hover:bg-blue-600 transition-colors"
               >
-                <FaPaperPlane className="h-4 w-4" />
+                <Send className="h-4 w-4" />
                 <span className="sr-only">Send</span>
               </button>
             </form>
