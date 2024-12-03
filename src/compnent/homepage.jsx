@@ -23,7 +23,7 @@ const HomeSection = () => {
                                 </a>
                             </Tilt>
                             <Tilt options={{ max: 10, scale: 1.05, speed: 300 }}>
-                                <a href="https://drive.google.com/file/d/1c98ennzEblDXO9wRaFjkK_BU3aim8hRm/view?usp=sharing" target="_blank" className="btn-secondary bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out">
+                                <a href="https://drive.google.com/file/d/1Cao3-cCp65JFKXmDWbUzkHEU3H8Yo_jX/view?usp=sharing" target="_blank" className="btn-secondary bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out">
                                     Resume
                                 </a>
                             </Tilt>
