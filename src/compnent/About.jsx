@@ -12,7 +12,8 @@ const AboutSection = () => {
 
   const skills = [
     'C++', 'JavaScript', 'SQL', 'HTML', 'React', 'Node.js', 'MongoDB', 'Python', 'CSS', 'MERN stack',
-    
+    'Django', 'Git' , 'Express.js', 'RESTful APIs', 'Data Structures', 'Algorithms', 'Competitive Programming',
+    'Python ORM', 'Socket.io' , 'JWT', 'Bcrypt', 'Cloudinary', 'Postman',
   ];
   const projects = [
     {
