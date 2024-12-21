@@ -18,10 +18,10 @@ const cards = [
   },
   {
     title: "Finance Analyser",
-    description: ` A full-stack finance management application allowing users to record, track, and analyze financial transactions with features like custom date range selection and interactive charts for detailed insights.`,
+    description: ` A comprehensive full-stack finance management application designed to empower users in managing their financial transactions efficiently. Users can record earnings and expenditures, track their financial activities, and analyze data with precision. The application features custom date range selection for flexible reporting and interactive charts that provide visually appealing and detailed insights into spending and earning patterns over time.`,
     image : finance,
-    secondLink: "https://github.com/AbhishekChetiya/Finance-Manager",
-    link: "https://financial-anaylser.vercel.app/"
+    secondLink: "https://financial-anaylser.vercel.app/",
+    link: "https://github.com/AbhishekChetiya/Finance-Manager"
   },
   {
     title: "full-stack To-Do List application",

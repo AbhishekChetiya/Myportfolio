@@ -24,8 +24,8 @@ const AboutSection = () => {
     {
       title: "Finance Analyser",
       description: ` A full-stack finance management application allowing users to record, track, and analyze financial transactions with features like custom date range selection and interactive charts for detailed insights.`,
-      secondLink: "https://github.com/AbhishekChetiya/Finance-Manager",
-      link: "https://financial-anaylser.vercel.app/"
+      secondLink: "https://financial-anaylser.vercel.app/",
+      link: "https://github.com/AbhishekChetiya/Finance-Manager"
     },
     {
       title: "full-stack To-Do List application",
