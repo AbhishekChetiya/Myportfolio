@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Book, Code, Trophy, Star, Briefcase } from 'lucide-react';
+import { User, Code, Trophy, Briefcase } from 'lucide-react';
 
 const AboutSection = () => {
   const personalInfo = [
@@ -16,10 +16,16 @@ const AboutSection = () => {
   ];
   const projects = [
     {
-      title: "Social-Media-Website",
+      title: "Connectify",
       description: `Social Media built with MERN stack, featuring real-time chat and Post like and comments Features.`,
       secondLink: `https://social-media-website-rust.vercel.app/`,
       link: "https://github.com/AbhishekChetiya/Social-Media-Website"
+    },
+    {
+      title: "Finance Analyser",
+      description: ` A full-stack finance management application allowing users to record, track, and analyze financial transactions with features like custom date range selection and interactive charts for detailed insights.`,
+      secondLink: "https://github.com/AbhishekChetiya/Finance-Manager",
+      link: "https://financial-anaylser.vercel.app/"
     },
     {
       title: "full-stack To-Do List application",
@@ -44,12 +50,6 @@ const AboutSection = () => {
       description: `Card game where players try to reach 21, featuring sound effects and penalties.`,
       secondLink: "https://casino-dusky-eta.vercel.app/",
       link: "https://github.com/AbhishekChetiya/CASINO"
-    },
-    {
-      title: "Telegram Bot",
-      description: `Personalized Telegram bot showcasing my skills and achievements with Gemini AI integration.`,
-      secondLink: "https://github.com/AbhishekChetiya/MyTeleChat_bot",
-      link: "https://github.com/AbhishekChetiya/MyTeleChat_bot"
     }
     // Add more projects as needed
   ];

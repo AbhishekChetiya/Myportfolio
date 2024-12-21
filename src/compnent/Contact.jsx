@@ -20,7 +20,7 @@ const ContactSection = () => {
             </div>
             <div className="text-center">
               <h3 className="text-xl font-semibold mb-2" >Resume</h3>
-              <a href="https://drive.google.com/file/d/1Cao3-cCp65JFKXmDWbUzkHEU3H8Yo_jX/view?usp=sharing"  target = "_blank" className="text-blue-500 hover:text-blue-600">Resume</a>
+              <a href="https://drive.google.com/file/d/1Kxse9aWEf4miLOBZRBWU3fq3OPMO0zhx/view?usp=sharing"  target = "_blank" className="text-blue-500 hover:text-blue-600">Resume</a>
             </div>
           </div>
           <div className="text-center mt-10">

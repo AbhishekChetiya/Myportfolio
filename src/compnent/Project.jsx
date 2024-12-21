@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import todo from '/todo.png'
-import tele from '/Telegram.png'
+import finance from '/finance.jpg'
 import socail from '/Social.png'
 import casino from '/casino.png'
 import calculator from '/calculator.png'
@@ -15,6 +15,13 @@ const cards = [
     image: socail,
     secondLink : `https://social-media-website-rust.vercel.app/`,
     link: "https://github.com/AbhishekChetiya/Social-Media-Website"
+  },
+  {
+    title: "Finance Analyser",
+    description: ` A full-stack finance management application allowing users to record, track, and analyze financial transactions with features like custom date range selection and interactive charts for detailed insights.`,
+    image : finance,
+    secondLink: "https://github.com/AbhishekChetiya/Finance-Manager",
+    link: "https://financial-anaylser.vercel.app/"
   },
   {
     title: "full-stack To-Do List application",
@@ -43,14 +50,7 @@ const cards = [
     image: casino,
     secondLink :"https://casino-dusky-eta.vercel.app/",
     link: "https://github.com/AbhishekChetiya/CASINO"
-  },
-  {
-    title: "Telegram Bot",
-    description: `This personalized Telegram bot, built with Gemini AI, introduces my skills, interests, and achievements. It answers user questions and provides tailored insights about my software development background, competitive programming, and ongoing projects, enhancing user interaction in a friendly manner.`,
-    image: tele,
-    secondLink: "https://github.com/AbhishekChetiya/MyTeleChat_bot",
-    link: "https://github.com/AbhishekChetiya/MyTeleChat_bot"
-  },
+  }
   // Add more projects as needed
 ];
 
