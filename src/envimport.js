@@ -19,9 +19,11 @@ const envfile = {
     Built using the MERN stack, this project includes real-time chat via Socket.io, image and video posts, comments, and likes. Secure authentication with JWT and Bcrypt, dynamic following systems, and admin group management demonstrate Abhishek's full-stack development skills. 
     Websit Link : "https://social-media-website-rust.vercel.app/",
     Project GitHub Link : "https://github.com/AbhishekChetiya/Social-Media-Website"
-
-    Telegram Bot:
-    Personalized bot using Gemini AI, offering an engaging virtual introduction to Abhishek's skills and achievements. It provides real-time answers to user queries, reflecting his commitment to enhancing user interaction with innovative solutions.
+    
+    Finance Analyser:
+    A comprehensive full-stack finance management application designed to empower users in managing their financial transactions efficiently. Users can record earnings and expenditures, track their financial activities, and analyze data with precision. The application features custom date range selection for flexible reporting and interactive charts that provide visually appealing and detailed insights into spending and earning patterns over time.
+    Website Link : "https://financial-anaylser.vercel.app/",
+    Project GitHub Link : "https://github.com/AbhishekChetiya/Finance-Manager"
 
     Calculator Website:
     Created a responsive calculator website using HTML, CSS, and JavaScript. This project showcases Abhishek's front-end development skills, with a focus on user-friendly design and functionality.
@@ -62,7 +64,9 @@ const envfile = {
     GitHub:[https://github.com/AbhishekChetiya]
     Email: a1.hishek.p1.andey@gmail.com
     LinkedIn: [https://www.linkedin.com/in/abhishek-pandey-0b41a9229/]
-
+    
+    RightNow He is busy in his final year project and preparing himself for placement in software company. 
+    Right Now is study gen ai and brush up his skills in the field of web development and competitive programming
 
     Things To Notice:-
     Give Answer that only related to the abhishek only and answer is not more than 100 words 
