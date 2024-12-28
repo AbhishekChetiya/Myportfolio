@@ -1,6 +1,6 @@
 import envfile from '../envimport.js';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-const apiKey = envfile.apiKey;
+const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 const generationConfig = {
   temperature: 0.4,
