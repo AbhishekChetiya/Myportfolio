@@ -11,6 +11,7 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-4">
               <a href="#home-section" className="nav-link">Home</a>
               <a href="#about-section" className="nav-link">About</a>
+              <a href="#experience-sections" className="nav-link">Experience </a>
               <a href="#project-section" className="nav-link">Projects</a>
               <a href="#Profile-section" className="nav-link">Profiles</a>
               <a href="#Skills-section" className="nav-link">Skills</a>
@@ -24,6 +25,7 @@ const Navbar = () => {
             <div className="md:hidden py-2">
               <a href="#home-section" className="block py-2">Home</a>
               <a href="#about-section" className="block py-2">About</a>
+              <a href='#experience-sections' className='block py-2'>Experience</a>
               <a href="#project-section" className="block py-2">Projects</a>
               <a href="#Profile-section" className="block py-2">Profiles</a>
               <a href="#Skills-section" className="block py-2">Skills</a>

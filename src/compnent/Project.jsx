@@ -6,6 +6,7 @@ import socail from '/Social.png'
 import casino from '/casino.png'
 import calculator from '/calculator.png'
 import sudoko from '/sudoko.png'
+import chatbot from '/chatbot.png'
 import {Tilt} from 'react-tilt';
 
 const cards = [
@@ -17,6 +18,13 @@ const cards = [
     link: "https://github.com/AbhishekChetiya/Social-Media-Website"
   },
   {
+    title: "AI Movie Character Chatbot",
+    description: `An advanced conversational AI system that enhances realism by retrieving actual movie dialogues using Retrieval-Augmented Generation (RAG) with semantic search. It utilizes Gemini AI for vector-based dialogue retrieval and generates responses when no exact match is found. The application integrates Redis caching for faster retrieval, rate limiting for optimized request handling, and K6 load testing for performance benchmarking.`,
+    image: chatbot,
+    secondLink: "https://ai-movie-character-chatbot.vercel.app/",
+    link: "https://github.com/AbhishekChetiya/AI-Movie-Character-Chatbot"
+},  
+{
     title: "Finance Analyser",
     description: ` A comprehensive full-stack finance management application designed to empower users in managing their financial transactions efficiently. Users can record earnings and expenditures, track their financial activities, and analyze data with precision. The application features custom date range selection for flexible reporting and interactive charts that provide visually appealing and detailed insights into spending and earning patterns over time.`,
     image : finance,
@@ -43,13 +51,6 @@ const cards = [
     image: sudoko,
     secondLink : "https://sudoku-solver-murex.vercel.app/",
     link: "https://github.com/AbhishekChetiya/SudokuSolver"
-  },
-  {
-    title: "Casino Game",
-    description: `A card game where players draw from a deck of thirteen cards to reach a winning value of 21. Players can continue drawing cards until their total exceeds 21, resulting in a loss. Each loss deducts money, and sound effects enhance the gaming experience, signaling wins and losses.`,
-    image: casino,
-    secondLink :"https://casino-dusky-eta.vercel.app/",
-    link: "https://github.com/AbhishekChetiya/CASINO"
   }
   // Add more projects as needed
 ];

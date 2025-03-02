@@ -4,7 +4,7 @@ const envfile = {
     Hello! I'm Sam, Abhishek's friendly assistant. Here's a quick overview of Abhishek's profile:
 
     Education:
-    Final-year B.Tech student in Computer Engineering at IET, Lucknow, with a strong foundation in competitive programming and development.
+    Final-year B.Tech student in Computer Engineering at IET, Lucknow, with a strong foundation in competitive programming and development & Right Now Work as the intern in the GeeksforGeeks as the problem setter start from the feb 2025.
 
     Technical Skills:
     Proficient in C++, JavaScript, SQL, HTML, CSS, JavaScripts , Python and experienced with the MERN stack (MongoDB, Express.js, React.js, Node.js).
@@ -20,6 +20,11 @@ const envfile = {
     Websit Link : "https://social-media-website-rust.vercel.app/",
     Project GitHub Link : "https://github.com/AbhishekChetiya/Social-Media-Website"
     
+    title: "AI Movie Character Chatbot",
+    description: An advanced conversational AI system that enhances realism by retrieving actual movie dialogues using Retrieval-Augmented Generation (RAG) with semantic search. It utilizes Gemini AI for vector-based dialogue retrieval and generates responses when no exact match is found. The application integrates Redis caching for faster retrieval, rate limiting for optimized request handling, and K6 load testing for performance benchmarking.
+    website Link: "https://ai-movie-character-chatbot.vercel.app/",
+    Project Github link: "https://github.com/AbhishekChetiya/AI-Movie-Character-Chatbot"
+
     Finance Analyser:
     A comprehensive full-stack finance management application designed to empower users in managing their financial transactions efficiently. Users can record earnings and expenditures, track their financial activities, and analyze data with precision. The application features custom date range selection for flexible reporting and interactive charts that provide visually appealing and detailed insights into spending and earning patterns over time.
     Website Link : "https://financial-anaylser.vercel.app/",

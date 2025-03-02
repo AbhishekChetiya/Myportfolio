@@ -12,8 +12,8 @@ const AboutSection = () => {
 
   const skills = [
     'C++', 'JavaScript', 'SQL', 'HTML', 'React', 'Node.js', 'MongoDB', 'Python', 'CSS', 'MERN stack',
-    'Django', 'Git' , 'Express.js', 'RESTful APIs', 'Data Structures', 'Algorithms', 'Competitive Programming',
-    'Python ORM', 'Socket.io' , 'JWT', 'Bcrypt', 'Cloudinary', 'Postman',
+    'Django', 'Git', 'Express.js', 'RESTful APIs', 'Data Structures', 'Algorithms', 'Competitive Programming',
+    'Python ORM', 'Socket.io', 'JWT', 'Bcrypt', 'Cloudinary', 'Postman', 'Redis' , 'K6', 'RAG' , 'Vectorizations',
   ];
   const projects = [
     {
@@ -22,6 +22,12 @@ const AboutSection = () => {
       secondLink: `https://social-media-website-rust.vercel.app/`,
       link: "https://github.com/AbhishekChetiya/Social-Media-Website"
     },
+    {
+      title: "AI Movie Character Chatbot",
+      description: `Conversational AI that retrieves movie dialogues using RAG with semantic search. Utilizes Gemini AI for accurate responses and features Redis caching & rate limiting.`,
+      secondLink: `https://ai-movie-character-chatbot.vercel.app/`,
+      link: "https://github.com/AbhishekChetiya/AI-Movie-Character-Chatbot"
+    },  
     {
       title: "Finance Analyser",
       description: ` A full-stack finance management application allowing users to record, track, and analyze financial transactions with features like custom date range selection and interactive charts for detailed insights.`,
@@ -45,16 +51,10 @@ const AboutSection = () => {
       description: `A Sudoku solver using recursion and backtracking, with real-time validation.`,
       secondLink: "https://sudoku-solver-murex.vercel.app/",
       link: "https://github.com/AbhishekChetiya/SudokuSolver"
-    },
-    {
-      title: "Casino",
-      description: `Card game where players try to reach 21, featuring sound effects and penalties.`,
-      secondLink: "https://casino-dusky-eta.vercel.app/",
-      link: "https://github.com/AbhishekChetiya/CASINO"
     }
     // Add more projects as needed
   ];
-  
+
 
   const achievements = [
     { platform: 'Codeforces', status: 'Expert', rating: 1633 },
